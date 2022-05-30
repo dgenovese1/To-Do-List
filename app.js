@@ -14,7 +14,7 @@
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(express.static("public"));
 
-  app.get("/index.html", function(req, res){
+  app.get("/", function(req, res){
 
     let day = date.getDate();
 
@@ -31,7 +31,7 @@
       res.redirect("/work");
     } else {
     items.push(item);
-    res.redirect("/index.html");
+    res.redirect("/");
     }
 
   });
@@ -44,6 +44,6 @@
     res.render("about");
   })
 
-  app.listen(process.env.PORT || 3000, function(){
+  app.listen(3000, function(){
     console.log("working");
   });
